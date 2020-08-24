@@ -11,6 +11,7 @@ authors = ["Anton Paramoshin <antonparamoshin@gmail.com>"]
 python = "^3.7"
 click = "^7.1.2"
 requests = "^2.24.0"
+pydantic = "^1.6.1"
 
 
 [tool.poetry.dev-dependencies]
@@ -19,11 +20,17 @@ coverage = {extras = ["toml"], version = "^5.2.1"}
 pytest-cov = "^2.10.1"
 pytest-mock = "^3.3.0"
 black = "^19.10b0"
-flakehell = "^0.6.0"
 flake8-bandit = "^2.1.2"
 flake8-bugbear = "^20.1.4"
 pep8-naming = "^0.11.1"
 pre-commit = "^2.7.1"
+mypy = "^0.782"
+flake8-annotations = "^2.3.0"
+flake8-docstrings = "^1.5.0"
+darglint = "^1.5.3"
+xdoctest = "^0.13.0"
+pdoc3 = "^0.8.4"
+flakehell = "^0.6.0"
 
 
 [tool.poetry.scripts]
@@ -48,7 +55,7 @@ fail_under = 100
 line_length = 120
 multi_line_output = 3
 include_trailing_comma = true
-known_third_party = ["click", "hm_python", "nox", "pytest", "requests"]
+known_third_party = ["_pytest", "click", "hm_python", "nox", "pydantic", "pytest", "pytest_mock", "requests"]
 
 
 [tool.mypy]
@@ -85,6 +92,8 @@ enable_extensions = "G"
 accept_encodings = "utf-8"
 max_complexity = 6
 max_line_length = 120
+docstring-convention = "google"
+strictness = "short"
 
 
 [tool.flakehell.plugins]
@@ -96,11 +105,18 @@ flake8-bandit = ["-*", "+S1??"]
 flake8-bugbear = ["+*", "-E501"]
 mccabe = ["+*"]
 "pep8-naming" = ["+*"]
-pycodestyle = ["+*", "-203", "-E266", "-W503"]
+pycodestyle = ["+*", "-E203", "-E266", "-W503"]
+flake8-annotations = ["+*"]
+flake8-docstrings = ["+*"]
 
 
 [tool.flakehell.exceptions."tests/"]
 flake8-bandit = ["-S101"]
+flake8-annotations = ["-*"]
+
+
+[tool.flakehell.exceptions."noxfile.py"]
+flake8-annotations = ["-*"]
 
 
 [build-system]
