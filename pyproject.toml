@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "hm-python"
+version = "0.1.0"
+description = ""
+license = "MIT"
+readme = "README.md"
+authors = ["Anton Paramoshin <antonparamoshin@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = "^7.1.2"
+requests = "^2.24.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+hm-python = "hm_python.console:main"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
