@@ -1,7 +1,0 @@
-README.md
-setup.py
-src/hm_python/__init__.py
-src/hm_python.egg-info/PKG-INFO
-src/hm_python.egg-info/SOURCES.txt
-src/hm_python.egg-info/dependency_links.txt
-src/hm_python.egg-info/top_level.txt
