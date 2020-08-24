@@ -1,7 +1,6 @@
 import click
 import requests
 
-
 API_URL = "https://{lang}.wikipedia.org/api/rest_v1/page/random/summary"
 
 
@@ -15,4 +14,3 @@ def random_page(lang="ru"):
     except requests.RequestException as e:
         message = str(e)
         raise click.ClickException(message)
-

@@ -1,7 +1,6 @@
 import click.testing
 import pytest
 import requests
-
 from hm_python import console
 
 
@@ -52,4 +51,3 @@ def test_main_prints_message_on_request_error(runner, mock_requests_get):
 def test_main_succeeds_in_production_env(runner):
     result = runner.invoke(console.main)
     assert result.exit_code == 0
-

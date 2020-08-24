@@ -1,0 +1,28 @@
+repos:
+    -   repo: https://github.com/pre-commit/pre-commit-hooks
+        rev: v2.3.0
+        hooks:
+            - id: trailing-whitespace
+            - id: check-yaml
+            - id: end-of-file-fixer
+    -   repo: https://github.com/asottile/seed-isort-config
+        rev: v2.1.0
+        hooks:
+        - id: seed-isort-config
+    -   repo: https://github.com/timothycrosley/isort
+        rev: 4.3.21-2
+        hooks:
+        -   id: isort
+            additional_dependencies: [toml]
+    -   repo: local
+        hooks:
+        - id: black
+          name: black
+          entry: poetry run black
+          language: system
+          types: [python]
+        - id: flakehell
+          name: flakehell
+          entry: poetry run flakehell lint
+          language: system
+          types: [python]

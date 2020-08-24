@@ -13,4 +13,3 @@ def mock_requests_get(mocker):
         "extract": "Lorem ipsum dolor sit amet",
     }
     return mock
-
